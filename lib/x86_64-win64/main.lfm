@@ -1,0 +1,141 @@
+object Form1: TForm1
+  Left = 611
+  Height = 284
+  Top = 247
+  Width = 670
+  Caption = 'Self Test Card'
+  ClientHeight = 284
+  ClientWidth = 670
+  OnCreate = FormCreate
+  LCLVersion = '2.2.2.0'
+  object pnTop: TPanel
+    Left = 0
+    Height = 96
+    Top = 0
+    Width = 670
+    Align = alTop
+    ClientHeight = 96
+    ClientWidth = 670
+    TabOrder = 0
+    object btStart: TButton
+      Left = 128
+      Height = 25
+      Top = 32
+      Width = 75
+      Caption = 'Start'
+      OnClick = btStartClick
+      TabOrder = 0
+    end
+    object edVolume: TEdit
+      Left = 16
+      Height = 23
+      Top = 32
+      Width = 104
+      TabOrder = 1
+      Text = 'E:'
+    end
+    object Label1: TLabel
+      Left = 16
+      Height = 15
+      Top = 13
+      Width = 38
+      Caption = 'Device:'
+      ParentColor = False
+    end
+    object btcancel: TButton
+      Left = 216
+      Height = 25
+      Top = 32
+      Width = 75
+      Caption = 'Cancel'
+      Enabled = False
+      OnClick = btcancelClick
+      TabOrder = 2
+    end
+    object cbSD: TComboBox
+      Left = 304
+      Height = 23
+      Top = 34
+      Width = 100
+      ItemHeight = 15
+      Items.Strings = (
+        '4'
+        '8'
+        '16'
+        '64'
+        '128'
+        '256'
+        '512'
+        '1024'
+        '2048'
+      )
+      TabOrder = 3
+      Text = 'cbSD'
+    end
+    object lb2: TLabel
+      Left = 304
+      Height = 15
+      Top = 16
+      Width = 68
+      Caption = 'Size SD in GB'
+      ParentColor = False
+    end
+  end
+  object pnTeste: TPanel
+    Left = 0
+    Height = 188
+    Top = 96
+    Width = 670
+    Align = alClient
+    ClientHeight = 188
+    ClientWidth = 670
+    TabOrder = 1
+    object Label2: TLabel
+      Left = 232
+      Height = 15
+      Top = 56
+      Width = 180
+      Caption = 'Create by Marcelo Maurin Martins'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 281
+      Height = 15
+      Top = 104
+      Width = 76
+      Caption = 'Check card SD'
+      ParentColor = False
+    end
+    object pbbloco: TProgressBar
+      Left = 216
+      Height = 20
+      Top = 136
+      Width = 223
+      TabOrder = 0
+    end
+    object lbbloco: TLabel
+      Left = 317
+      Height = 15
+      Top = 160
+      Width = 6
+      Caption = '0'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 504
+      Height = 15
+      Top = 136
+      Width = 48
+      Caption = 'Estimate:'
+      ParentColor = False
+    end
+    object lbestimate: TLabel
+      Left = 504
+      Height = 15
+      Top = 152
+      Width = 55
+      Caption = 'lbEstimate'
+      ParentColor = False
+    end
+  end
+end
