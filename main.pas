@@ -222,7 +222,7 @@ begin
       end
       else
       begin
-        resultado := floattostr(tamanho / (1024))+' G bytes';
+        resultado := floattostr(tamanho / (1024**2))+' G bytes';
         ref := 10;
       end;
   end;

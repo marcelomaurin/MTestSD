@@ -18,7 +18,6 @@ type
     cbSD: TComboBox;
     cbSizeBlock: TComboBox;
     edVolume: TEdit;
-    Image1: TImage;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -223,7 +222,7 @@ begin
       end
       else
       begin
-        resultado := floattostr(tamanho / (1024))+' G bytes';
+        resultado := floattostr(tamanho / (1024**))+' G bytes';
         ref := 10;
       end;
   end;

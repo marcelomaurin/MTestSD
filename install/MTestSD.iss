@@ -43,7 +43,7 @@ Name: "MTestSD"; Description: "Arquivos do test"; Types: MTestSD;
 
 [CustomMessages]
 T_MTestSD=MTestSD
-TD_MTestSD=Install demo to MTestSD
+TD_MTestSD=Install MTestSD
 
 
 [Code]
