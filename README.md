@@ -6,6 +6,11 @@ Application to Test SD Size
 # Install 
 In folder /bin/ download last version of instalation.
 
-Run setup, 
+# Run setup.
 
+MTestSD in folder C:\Program Files (x86)\MTestSD
+
+
+## Sugestion 
+marcelomaurinmartins@gmail.com
 
