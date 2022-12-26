@@ -58,6 +58,7 @@ object Form1: TForm1
       Top = 34
       Width = 100
       ItemHeight = 15
+      ItemIndex = 0
       Items.Strings = (
         '4'
         '8'
@@ -70,7 +71,7 @@ object Form1: TForm1
         '2048'
       )
       TabOrder = 3
-      Text = 'cbSD'
+      Text = '4'
     end
     object lb2: TLabel
       Left = 304
@@ -79,6 +80,45 @@ object Form1: TForm1
       Width = 68
       Caption = 'Size SD in GB'
       ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 296
+      Height = 15
+      Top = 75
+      Width = 38
+      Caption = 'Version'
+      ParentColor = False
+    end
+    object lbVersion: TLabel
+      Left = 352
+      Height = 15
+      Top = 75
+      Width = 48
+      Caption = 'lbVersion'
+      ParentColor = False
+    end
+    object lb3: TLabel
+      Left = 440
+      Height = 15
+      Top = 16
+      Width = 90
+      Caption = 'Size Block Kbytes'
+      ParentColor = False
+    end
+    object cbSizeBlock: TComboBox
+      Left = 440
+      Height = 23
+      Top = 34
+      Width = 100
+      ItemHeight = 15
+      ItemIndex = 1
+      Items.Strings = (
+        '1'
+        '1024'
+        '1048576'
+      )
+      TabOrder = 4
+      Text = '1024'
     end
   end
   object pnTeste: TPanel

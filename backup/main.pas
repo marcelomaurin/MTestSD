@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
-  ComCtrls;
+  ComCtrls, math;
 
 type
 
@@ -16,11 +16,16 @@ type
     btStart: TButton;
     btcancel: TButton;
     cbSD: TComboBox;
+    cbSizeBlock: TComboBox;
     edVolume: TEdit;
+    Image1: TImage;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    Label4: TLabel;
     Label5: TLabel;
+    lb3: TLabel;
+    lbVersion: TLabel;
     lbestimate: TLabel;
     lb2: TLabel;
     lbbloco: TLabel;
@@ -42,10 +47,14 @@ type
     flgTest : boolean;
     ref : int64;
     inicio : TDatetime;
+    SizeBlock : int64;
   end;
 
 var
   Form1: TForm1;
+
+const
+  Version = '0.1';
 
 implementation
 
@@ -71,6 +80,7 @@ procedure TForm1.FormCreate(Sender: TObject);
 var
   a : integer;
 begin
+  lbVersion.caption := version;
   for a := 0 to 1023 do
       info[a] := '1';
 end;
@@ -83,14 +93,17 @@ end;
 procedure TForm1.StartBloco;
 var
   bloco : int64;
+  base : int64;
 
 begin
   bloco := 0;
-  inicio:= now;
+  inicio:= now; //Hora atual
   flgTest := true;
-  btcancel.Enabled:=true;
+  btcancel.Enabled:= true;
   ref := 10;
-  pbbloco.Max := strtoint(cbSD.Text) * 1024 * 1024 ;
+  base := 1024;
+  SizeBlock:= base ** (cbSizeBlock.ItemIndex)*1024; (*Tamanho do bloco de dados*)
+  pbbloco.Max := ((strtoint(cbSD.Text) *  (1024 ** 3)) div Sizeblock); //Nro total de blocos
   repeat
   begin
        EscreveBloco(bloco);
@@ -117,8 +130,8 @@ end;
 procedure TForm1.EscreveBloco(bloco: int64);
 var
    f: Text;
-   a : integer;
-   b : integer;
+   a : int64;
+   b : int64;
 
 begin
   try
@@ -127,7 +140,7 @@ begin
    {$I-} // without this, if rewrite fails then a runtime error will be generated
    Rewrite(f);
    {$I+}
-   for b:= 0 to 1023 do
+   for b:= 1 to (sizeblock div 1024) do
    begin
         for a:= 0 to 1023 do
             write(f,info[a]);
@@ -187,30 +200,34 @@ function TForm1.formataleg(bloco: int64): string;
 var
   resultado : string;
   agora : TDatetime;
+  tamanho : float;
 
 begin
   resultado := '';
-  agora := ((now()-inicio)/bloco)* (strtoint(cbSD.Caption)*1024);
+  agora := ((now()-inicio)/(bloco*SizeBlock) * (strtoint(cbSD.Caption)*(1024**3)));
   lbestimate.Caption:= FormatDateTime('hh:mm:ss',agora);
-(*
-  if (bloco < 1024) then
+
+  tamanho := (SizeBlock * bloco)/1024; (*Tamanho em K bytes*)
+  if(tamanho < (1024**1)) then
   begin
-    resultado := inttostr(bloco+1024)+' Kbytes';
-  end
-  else
-  begin
-  *)
-     if(bloco < (1024)) then
-     begin
-       resultado := floattostr(bloco )+' M bytes';
+       resultado := floattostr(tamanho)+' K bytes';
        ref := 10;
-     end
+  end
      else
-     begin
-        resultado := floattostr(bloco / (1024))+' G bytes';
-        ref := 100;
-     end;
-  //end;
+  begin
+      if(tamanho < (1024**2)) then
+      begin
+        resultado := floattostr(tamanho / (1024))+' M bytes';
+        ref := 10;
+
+      end
+      else
+      begin
+        resultado := floattostr(tamanho / (1024))+' G bytes';
+        ref := 10;
+      end;
+  end;
+
   result := resultado;
 end;
 
