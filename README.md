@@ -8,16 +8,19 @@ Test in Windows
 
 # Windows
 
-# Install 
+## Install 
 In folder /bin/ download last version of instalation.
 
-# Run setup.
+## Run 
 
-MTestSD in folder C:\Program Files (x86)\MTestSD
 
 # Linux
+Version Debian Package, not avaliable. Sorry, to future!
 
+## Install 
 
-## Sugestion 
+## Run 
+
+# Sugestion 
 marcelomaurinmartins@gmail.com
 
