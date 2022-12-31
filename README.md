@@ -1,6 +1,8 @@
 # Maurin Self Check SD Size
 Application to Test SD Size
 
+<img href="https://github.com/marcelomaurin/MTestSD/blob/main/imgs/Main.JPG">
+
 # Windows
 
 # Install 
