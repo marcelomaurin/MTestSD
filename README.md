@@ -5,6 +5,8 @@ Application to Test SD Size
 Test in Windows 
 
 
+<img src="https://github.com/marcelomaurin/MTestSD/blob/main/imgs/Erro%20de%20tamanho.JPG">
+Result in Pen Drive 4Gbytes
 
 # Windows
 
