@@ -21,6 +21,12 @@ Version Debian Package, not avaliable. Sorry, to future!
 
 ## Run 
 
+# News
+0.1 - Create first version
+0.2 - Make Remaining information and estimate time.
+
+
+
 # Sugestion 
 marcelomaurinmartins@gmail.com
 
