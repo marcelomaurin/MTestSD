@@ -177,5 +177,37 @@ object Form1: TForm1
       Caption = 'lbEstimate'
       ParentColor = False
     end
+    object Label6: TLabel
+      Left = 504
+      Height = 15
+      Top = 43
+      Width = 44
+      Caption = 'Starting:'
+      ParentColor = False
+    end
+    object lbstating: TLabel
+      Left = 504
+      Height = 15
+      Top = 56
+      Width = 46
+      Caption = 'lbstating'
+      ParentColor = False
+    end
+    object Label7: TLabel
+      Left = 504
+      Height = 15
+      Top = 87
+      Width = 60
+      Caption = 'Remaining:'
+      ParentColor = False
+    end
+    object lbremaining: TLabel
+      Left = 504
+      Height = 15
+      Top = 104
+      Width = 64
+      Caption = 'lbremaining'
+      ParentColor = False
+    end
   end
 end

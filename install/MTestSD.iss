@@ -2,16 +2,17 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "MTestSD"
-#define MyAppVersion "0.1"
-#define MyAppPublisher "MAURINSOFT"
+#define MyAppVersion "0.2"
+#define MyAppPublisher "Maurinsoft"
 #define MyAppURL "http://maurinsoft.com.br"
 #define MyAppExeName "MTestSD.exe"
-
+;#define ToolsName "NsightSystems-2020.5.1.85-5ee086b.msi"
+;#define Startup "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp"
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{25E25926-C821-4D48-B273-8916FE92FCD5}
+AppId={{13BD7151-5F27-412D-A124-FBD75B59C0A1}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -21,11 +22,10 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DisableProgramGroupPage=yes
-OutputBaseFilename=MTestSD_setup_01
+OutputBaseFilename=win_setup_0.2
 Compression=lzma
 SolidCompression=yes
-
- 
+PrivilegesRequired=admin 
 
 [Languages]
 Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
@@ -33,37 +33,26 @@ Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortugue
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
-
-[Types]
-Name: "MTestSD"; Description: {cm:T_MTestSD}
-
-[Components]
-Name: "MTestSD"; Description: "Arquivos do test"; Types: MTestSD;
-
-
-[CustomMessages]
-T_MTestSD=MTestSD
-TD_MTestSD=Install MTestSD
-
-
-[Code]
-//#define MSIDT_CustomType "Whatever"
-//#include "DescriptiveTypes.isi"
-//procedure InitializeWizard();
-//begin
-// InitializeDescriptiveTypes();
-//end;
-
-
-
 [Files]
+; Mude seu binario p o caminho correto
 Source: "D:\projetos\maurinsoft\MTestSD\MTestSD.exe"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "D:\projetos\maurinsoft\relogio\instalador\tools\nvidia-smi.exe"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "D:\projetos\maurinsoft\relogio\instalador\tools\nvml.dll"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "D:\projetos\maurinsoft\relogio\instalador\tools\NsightSystems-2020.5.1.85-5ee086b.msi"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 Name: "{commonprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+;Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; WorkingDir: "{app}"
+; Name: "{#Startup}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; WorkingDir: "{app}"
+;Name: "{commonstartup}\{#ToolsName}"; Filename: "{app}\{#ToolsName}"; Tasks: desktopicon
+;Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+
+
 
 [Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-
+;Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,MyApp}"; Flags: runascurrentuser nowait postinstall skipifsilent
+;Filename: "{app}\{#MyAppExeName}"; Flags: runascurrentuser; Parameters: "-install -svcName ""{#MyAppExeName}"" -svcDesc ""MyApp"" -mainExe ""{#MyAppExeName}""  "
+;Filename: "{app}\{#ToolsName}"; Flags: runascurrentuser; Parameters: "-install -svcName ""{#ToolsName}"" -svcDesc ""MyApp"" -mainExe ""{#ToolsName}""  "

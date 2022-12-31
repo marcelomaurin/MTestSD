@@ -23,6 +23,10 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    lbremaining: TLabel;
+    lbstating: TLabel;
     lb3: TLabel;
     lbVersion: TLabel;
     lbestimate: TLabel;
@@ -53,7 +57,7 @@ var
   Form1: TForm1;
 
 const
-  Version = '0.1';
+  Version = '0.2';
 
 implementation
 
@@ -95,10 +99,13 @@ var
   base : int64;
 
 begin
+  btStart.Enabled:=false;
+  btcancel.Enabled:= true;
   bloco := 0;
   inicio:= now; //Hora atual
   flgTest := true;
-  btcancel.Enabled:= true;
+  lbstating.Caption := datetimetostr(inicio);
+
   ref := 10;
   base := 1024;
   SizeBlock:= base ** (cbSizeBlock.ItemIndex)*1024; (*Tamanho do bloco de dados*)
@@ -124,6 +131,7 @@ begin
   until not flgTest;
   Application.ProcessMessages;
   btcancel.Enabled:=false;
+  btStart.Enabled:=true;
 end;
 
 procedure TForm1.EscreveBloco(bloco: int64);
@@ -199,13 +207,15 @@ function TForm1.formataleg(bloco: int64): string;
 var
   resultado : string;
   agora : TDatetime;
+  total : TDatetime;
   tamanho : float;
 
 begin
   resultado := '';
-  agora := ((now()-inicio)/(bloco*SizeBlock) * (strtoint(cbSD.Caption)*(1024**3)));
-  lbestimate.Caption:= FormatDateTime('hh:mm:ss',agora);
-
+  total := ((now()-inicio)/(bloco*SizeBlock) * (strtoint(cbSD.Caption)*(1024**3)));
+  agora := now()-inicio;
+  lbestimate.Caption:= FormatDateTime('hh:mm:ss',total);
+  lbremaining.caption := FormatDateTime('hh:mm:ss',agora);
   tamanho := (SizeBlock * bloco)/1024; (*Tamanho em K bytes*)
   if(tamanho < (1024**1)) then
   begin
@@ -222,7 +232,7 @@ begin
       end
       else
       begin
-        resultado := floattostr(tamanho / (1024**))+' G bytes';
+        resultado := floattostr(tamanho / (1024**2))+' G bytes';
         ref := 10;
       end;
   end;
