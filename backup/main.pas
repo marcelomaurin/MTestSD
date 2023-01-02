@@ -57,7 +57,7 @@ var
   Form1: TForm1;
 
 const
-  Version = '0.2';
+  Version = '0.3';
 
 implementation
 
@@ -83,6 +83,13 @@ procedure TForm1.FormCreate(Sender: TObject);
 var
   a : integer;
 begin
+  {$IFDEF LINUX}
+     edVolume.Text:= '/media';
+  {$ENDIF}
+  {$IFDEF Windows}
+  edVolume.Text:= 'E:';
+  {$ENDIF}
+
   lbVersion.caption := version;
   for a := 0 to 1023 do
       info[a] := '1';
@@ -200,7 +207,13 @@ end;
 
 function TForm1.FileName(bloco: int64): string;
 begin
+  {$IFDEF WINDOWS}
   result := edVolume.text +'\'+ 'FL'+inttostr(bloco)+'.dat';
+  {$ENDIF}
+  {$IFDEF LINUX}
+    result := edVolume.text +'/'+ 'FL'+inttostr(bloco)+'.dat';
+  {$ENDIF}
+
 end;
 
 function TForm1.formataleg(bloco: int64): string;
@@ -215,7 +228,7 @@ begin
   total := ((now()-inicio)/(bloco*SizeBlock) * (strtoint(cbSD.Caption)*(1024**3)));
   agora := now()-inicio;
   lbestimate.Caption:= FormatDateTime('hh:mm:ss',total);
-  lbremaining.caption := FormatDateTime('hh:mm:ss',agora);
+  lbremaining.caption := FormatDateTime('hh:mm:ss',total-agora);
   tamanho := (SizeBlock * bloco)/1024; (*Tamanho em K bytes*)
   if(tamanho < (1024**1)) then
   begin

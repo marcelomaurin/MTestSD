@@ -1,0 +1,216 @@
+object Form1: TForm1
+  Left = 611
+  Height = 284
+  Top = 247
+  Width = 697
+  Caption = 'Self Test Card'
+  ClientHeight = 284
+  ClientWidth = 697
+  OnCreate = FormCreate
+  LCLVersion = '2.2.0.4'
+  object pnTop: TPanel
+    Left = 0
+    Height = 96
+    Top = 0
+    Width = 697
+    Align = alTop
+    ClientHeight = 96
+    ClientWidth = 697
+    TabOrder = 0
+    object btStart: TButton
+      Left = 256
+      Height = 25
+      Hint = 'Press to start process'
+      Top = 29
+      Width = 75
+      Caption = 'Start'
+      OnClick = btStartClick
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object Label1: TLabel
+      Left = 16
+      Height = 17
+      Top = 13
+      Width = 48
+      Caption = 'Device:'
+    end
+    object btcancel: TButton
+      Left = 344
+      Height = 25
+      Hint = 'Press to abort test process'
+      Top = 29
+      Width = 75
+      Caption = 'Cancel'
+      Enabled = False
+      OnClick = btcancelClick
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+    end
+    object cbSD: TComboBox
+      Left = 432
+      Height = 33
+      Hint = 'Size of SDCARD or Pendrive'
+      Top = 31
+      Width = 100
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        '4'
+        '8'
+        '16'
+        '64'
+        '128'
+        '256'
+        '512'
+        '1024'
+        '2048'
+      )
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      Text = '4'
+    end
+    object lb2: TLabel
+      Left = 432
+      Height = 17
+      Top = 13
+      Width = 85
+      Caption = 'Size SD in GB'
+    end
+    object Label4: TLabel
+      Left = 296
+      Height = 17
+      Top = 75
+      Width = 51
+      Caption = 'Version'
+    end
+    object lbVersion: TLabel
+      Left = 352
+      Height = 17
+      Top = 75
+      Width = 64
+      Caption = 'lbVersion'
+    end
+    object lb3: TLabel
+      Left = 568
+      Height = 17
+      Top = 13
+      Width = 115
+      Caption = 'Size Block Kbytes'
+    end
+    object cbSizeBlock: TComboBox
+      Left = 568
+      Height = 33
+      Hint = 'Block file dat to test SDCARD'
+      Top = 31
+      Width = 100
+      ItemHeight = 0
+      ItemIndex = 1
+      Items.Strings = (
+        '1'
+        '1024'
+        '1048576'
+      )
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+      Text = '1024'
+    end
+    object edVolume: TDirectoryEdit
+      Left = 16
+      Height = 33
+      Top = 32
+      Width = 224
+      Directory = 'edVolume'
+      ShowHidden = False
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 4
+      Text = 'edVolume'
+    end
+  end
+  object pnTeste: TPanel
+    Left = 0
+    Height = 188
+    Top = 96
+    Width = 697
+    Align = alClient
+    ClientHeight = 188
+    ClientWidth = 697
+    TabOrder = 1
+    object Label2: TLabel
+      Left = 232
+      Height = 17
+      Top = 56
+      Width = 226
+      Caption = 'Create by Marcelo Maurin Martins'
+    end
+    object Label3: TLabel
+      Left = 281
+      Height = 17
+      Top = 104
+      Width = 94
+      Caption = 'Check card SD'
+    end
+    object pbbloco: TProgressBar
+      Left = 216
+      Height = 20
+      Top = 136
+      Width = 223
+      TabOrder = 0
+    end
+    object lbbloco: TLabel
+      Left = 317
+      Height = 17
+      Top = 160
+      Width = 8
+      Caption = '0'
+    end
+    object Label5: TLabel
+      Left = 504
+      Height = 17
+      Top = 136
+      Width = 64
+      Caption = 'Estimate:'
+    end
+    object lbestimate: TLabel
+      Left = 504
+      Height = 17
+      Top = 152
+      Width = 73
+      Caption = 'lbEstimate'
+    end
+    object Label6: TLabel
+      Left = 504
+      Height = 17
+      Top = 43
+      Width = 58
+      Caption = 'Starting:'
+    end
+    object lbstating: TLabel
+      Left = 504
+      Height = 17
+      Top = 56
+      Width = 60
+      Caption = 'lbstating'
+    end
+    object Label7: TLabel
+      Left = 504
+      Height = 17
+      Top = 87
+      Width = 74
+      Caption = 'Remaining:'
+    end
+    object lbremaining: TLabel
+      Left = 504
+      Height = 17
+      Top = 104
+      Width = 80
+      Caption = 'lbremaining'
+    end
+  end
+end
