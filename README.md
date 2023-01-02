@@ -14,7 +14,7 @@ Result in Pen Drive 4Gbytes
 In folder /bin/ download last version of instalation.
 
 ## Run 
-
+Run binary only.
 
 # Linux
 Version binary to Linux X64.
@@ -27,10 +27,11 @@ Download binary linux.
 In console change permission file
 sudo chmod +777 ./lnx_MTestSD_[version]
 
-Run in graphic interface.
 
 
 ## Run 
+Run in graphic interface.
+
 
 # News
 0.3 - Version Linux and Windows, include feature (select device or folder)
