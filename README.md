@@ -24,6 +24,8 @@ Version Debian Package, not avaliable. Sorry, to future!
 ## Run 
 
 # News
+0.3 - Version Linux and Windows, include feature (select device or folder)
+
 0.2 - Make Remaining information and estimate time.
 
 0.1 - Create first version
