@@ -57,7 +57,7 @@ var
   Form1: TForm1;
 
 const
-  Version = '0.3';
+  Version = '0.4';
 
 implementation
 
@@ -163,7 +163,7 @@ begin
 
   except
      on E: EInOutError do
-      showmessage('Deu erro no bloco');
+      showmessage('Error in write process in SD CARD!');
 
   end;
 

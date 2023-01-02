@@ -2,37 +2,32 @@ object Form1: TForm1
   Left = 611
   Height = 284
   Top = 247
-  Width = 670
+  Width = 697
   Caption = 'Self Test Card'
   ClientHeight = 284
-  ClientWidth = 670
+  ClientWidth = 697
   OnCreate = FormCreate
   LCLVersion = '2.2.2.0'
   object pnTop: TPanel
     Left = 0
     Height = 96
     Top = 0
-    Width = 670
+    Width = 697
     Align = alTop
     ClientHeight = 96
-    ClientWidth = 670
+    ClientWidth = 697
     TabOrder = 0
     object btStart: TButton
-      Left = 128
+      Left = 256
       Height = 25
-      Top = 32
+      Hint = 'Press to start process'
+      Top = 29
       Width = 75
       Caption = 'Start'
       OnClick = btStartClick
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 0
-    end
-    object edVolume: TEdit
-      Left = 16
-      Height = 23
-      Top = 32
-      Width = 104
-      TabOrder = 1
-      Text = 'E:'
     end
     object Label1: TLabel
       Left = 16
@@ -43,19 +38,23 @@ object Form1: TForm1
       ParentColor = False
     end
     object btcancel: TButton
-      Left = 216
+      Left = 344
       Height = 25
-      Top = 32
+      Hint = 'Press to abort test process'
+      Top = 29
       Width = 75
       Caption = 'Cancel'
       Enabled = False
       OnClick = btcancelClick
-      TabOrder = 2
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
     end
     object cbSD: TComboBox
-      Left = 304
+      Left = 432
       Height = 23
-      Top = 34
+      Hint = 'Size of SDCARD or Pendrive'
+      Top = 31
       Width = 100
       ItemHeight = 15
       ItemIndex = 0
@@ -70,13 +69,15 @@ object Form1: TForm1
         '1024'
         '2048'
       )
-      TabOrder = 3
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
       Text = '4'
     end
     object lb2: TLabel
-      Left = 304
+      Left = 432
       Height = 15
-      Top = 16
+      Top = 13
       Width = 68
       Caption = 'Size SD in GB'
       ParentColor = False
@@ -98,17 +99,18 @@ object Form1: TForm1
       ParentColor = False
     end
     object lb3: TLabel
-      Left = 440
+      Left = 568
       Height = 15
-      Top = 16
+      Top = 13
       Width = 90
       Caption = 'Size Block Kbytes'
       ParentColor = False
     end
     object cbSizeBlock: TComboBox
-      Left = 440
+      Left = 568
       Height = 23
-      Top = 34
+      Hint = 'Block file dat to test SDCARD'
+      Top = 31
       Width = 100
       ItemHeight = 15
       ItemIndex = 1
@@ -117,18 +119,33 @@ object Form1: TForm1
         '1024'
         '1048576'
       )
-      TabOrder = 4
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
       Text = '1024'
+    end
+    object edVolume: TDirectoryEdit
+      Left = 16
+      Height = 23
+      Top = 32
+      Width = 224
+      Directory = 'edVolume'
+      ShowHidden = False
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 4
+      Text = 'edVolume'
     end
   end
   object pnTeste: TPanel
     Left = 0
     Height = 188
     Top = 96
-    Width = 670
+    Width = 697
     Align = alClient
     ClientHeight = 188
-    ClientWidth = 670
+    ClientWidth = 697
     TabOrder = 1
     object Label2: TLabel
       Left = 232

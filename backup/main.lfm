@@ -7,7 +7,7 @@ object Form1: TForm1
   ClientHeight = 284
   ClientWidth = 697
   OnCreate = FormCreate
-  LCLVersion = '2.2.0.4'
+  LCLVersion = '2.2.2.0'
   object pnTop: TPanel
     Left = 0
     Height = 96
@@ -29,23 +29,13 @@ object Form1: TForm1
       ShowHint = True
       TabOrder = 0
     end
-    object edVolume: TEdit
-      Left = 16
-      Height = 33
-      Hint = 'Insert Device '
-      Top = 32
-      Width = 232
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 1
-      Text = 'E:'
-    end
     object Label1: TLabel
       Left = 16
-      Height = 17
+      Height = 15
       Top = 13
-      Width = 48
+      Width = 38
       Caption = 'Device:'
+      ParentColor = False
     end
     object btcancel: TButton
       Left = 344
@@ -58,15 +48,15 @@ object Form1: TForm1
       OnClick = btcancelClick
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 2
+      TabOrder = 1
     end
     object cbSD: TComboBox
       Left = 432
-      Height = 33
+      Height = 23
       Hint = 'Size of SDCARD or Pendrive'
       Top = 31
       Width = 100
-      ItemHeight = 0
+      ItemHeight = 15
       ItemIndex = 0
       Items.Strings = (
         '4'
@@ -81,44 +71,48 @@ object Form1: TForm1
       )
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 3
+      TabOrder = 2
       Text = '4'
     end
     object lb2: TLabel
       Left = 432
-      Height = 17
+      Height = 15
       Top = 13
-      Width = 85
+      Width = 68
       Caption = 'Size SD in GB'
+      ParentColor = False
     end
     object Label4: TLabel
       Left = 296
-      Height = 17
+      Height = 15
       Top = 75
-      Width = 51
+      Width = 38
       Caption = 'Version'
+      ParentColor = False
     end
     object lbVersion: TLabel
       Left = 352
-      Height = 17
+      Height = 15
       Top = 75
-      Width = 64
+      Width = 48
       Caption = 'lbVersion'
+      ParentColor = False
     end
     object lb3: TLabel
       Left = 568
-      Height = 17
+      Height = 15
       Top = 13
-      Width = 115
+      Width = 90
       Caption = 'Size Block Kbytes'
+      ParentColor = False
     end
     object cbSizeBlock: TComboBox
       Left = 568
-      Height = 33
+      Height = 23
       Hint = 'Block file dat to test SDCARD'
       Top = 31
       Width = 100
-      ItemHeight = 0
+      ItemHeight = 15
       ItemIndex = 1
       Items.Strings = (
         '1'
@@ -127,8 +121,21 @@ object Form1: TForm1
       )
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 4
+      TabOrder = 3
       Text = '1024'
+    end
+    object edVolume: TDirectoryEdit
+      Left = 16
+      Height = 23
+      Top = 32
+      Width = 224
+      Directory = 'edVolume'
+      ShowHidden = False
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 4
+      Text = 'edVolume'
     end
   end
   object pnTeste: TPanel
@@ -142,17 +149,19 @@ object Form1: TForm1
     TabOrder = 1
     object Label2: TLabel
       Left = 232
-      Height = 17
+      Height = 15
       Top = 56
-      Width = 226
+      Width = 180
       Caption = 'Create by Marcelo Maurin Martins'
+      ParentColor = False
     end
     object Label3: TLabel
       Left = 281
-      Height = 17
+      Height = 15
       Top = 104
-      Width = 94
+      Width = 76
       Caption = 'Check card SD'
+      ParentColor = False
     end
     object pbbloco: TProgressBar
       Left = 216
@@ -163,52 +172,59 @@ object Form1: TForm1
     end
     object lbbloco: TLabel
       Left = 317
-      Height = 17
+      Height = 15
       Top = 160
-      Width = 8
+      Width = 6
       Caption = '0'
+      ParentColor = False
     end
     object Label5: TLabel
       Left = 504
-      Height = 17
+      Height = 15
       Top = 136
-      Width = 64
+      Width = 48
       Caption = 'Estimate:'
+      ParentColor = False
     end
     object lbestimate: TLabel
       Left = 504
-      Height = 17
+      Height = 15
       Top = 152
-      Width = 73
+      Width = 55
       Caption = 'lbEstimate'
+      ParentColor = False
     end
     object Label6: TLabel
       Left = 504
-      Height = 17
+      Height = 15
       Top = 43
-      Width = 58
+      Width = 44
       Caption = 'Starting:'
+      ParentColor = False
     end
     object lbstating: TLabel
       Left = 504
-      Height = 17
+      Height = 15
       Top = 56
-      Width = 60
+      Width = 46
       Caption = 'lbstating'
+      ParentColor = False
     end
     object Label7: TLabel
       Left = 504
-      Height = 17
+      Height = 15
       Top = 87
-      Width = 74
+      Width = 60
       Caption = 'Remaining:'
+      ParentColor = False
     end
     object lbremaining: TLabel
       Left = 504
-      Height = 17
+      Height = 15
       Top = 104
-      Width = 80
+      Width = 64
       Caption = 'lbremaining'
+      ParentColor = False
     end
   end
 end

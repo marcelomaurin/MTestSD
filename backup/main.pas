@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
-  ComCtrls, math;
+  ComCtrls, EditBtn, math;
 
 type
 
@@ -17,7 +17,7 @@ type
     btcancel: TButton;
     cbSD: TComboBox;
     cbSizeBlock: TComboBox;
-    edVolume: TEdit;
+    edVolume: TDirectoryEdit;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -163,7 +163,7 @@ begin
 
   except
      on E: EInOutError do
-      showmessage('Deu erro no bloco');
+      showmessage('Error in write process in SD CARD!');
 
   end;
 
