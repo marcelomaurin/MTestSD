@@ -17,7 +17,10 @@ In folder /bin/ download last version of instalation.
 
 
 # Linux
-Version Debian Package, not avaliable. Sorry, to future!
+Version binary to Linux X64.
+
+<img src="https://github.com/marcelomaurin/MTestSD/blob/main/imgs/linux.JPG">
+Linux Version
 
 ## Install 
 
