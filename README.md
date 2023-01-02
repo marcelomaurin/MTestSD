@@ -23,6 +23,12 @@ Version binary to Linux X64.
 Linux Version
 
 ## Install 
+Download binary linux.
+In console change permission file
+sudo chmod +777 ./lnx_MTestSD_[version]
+
+Run in graphic interface.
+
 
 ## Run 
 
